@@ -1,5 +1,4 @@
 import { RoleService } from './services/role.service';
-import { UtilisateurService } from './services/utilisateur.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { Injectable, NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -47,6 +46,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
+import { UserService } from './services/user.service';
 
 //Intercepte toute les requete pour les controler
 @Injectable()
@@ -93,7 +93,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
       useClass: HashLocationStrategy
     },
     IconSetService,
-    UtilisateurService,
+    UserService,
     RoleService,
     AppService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true} //fais appelle a XhrInterceptor

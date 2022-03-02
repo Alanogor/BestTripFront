@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../../app.service';
-import { Utilisateur } from '../../models/utilisateur';
+import { User } from '../../models/user';
 import { RoleService } from '../../services/role.service';
-import { UtilisateurService } from '../../services/utilisateur.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   templateUrl: 'forms.component.html'
@@ -12,8 +12,8 @@ export class FormsComponent implements OnInit{
 
   utilisateurs: any;  //utilisateurs: Utilisateur[] 
   roles: any;         // roles: Role[]
-  utilisateur: Utilisateur = new Utilisateur(); // Utilisateur utilisateur=new Utilisateur() : JAVA
-  constructor(private appServ:AppService, private utilisateurService:UtilisateurService,private roleService:RoleService,private router:Router) { } 
+  utilisateur: User = new User(); // Utilisateur utilisateur=new Utilisateur() : JAVA
+  constructor(private appServ:AppService, private utilisateurService:UserService,private roleService:RoleService,private router:Router) { } 
   ngOnInit(): void {
     this.findAll();
     this.loadRoles();
@@ -34,7 +34,7 @@ export class FormsComponent implements OnInit{
     // Vider le formulaire  
     this.utilisateurService.save(this.utilisateur).subscribe(()=>{
         this.findAll();  // MAJ de la liste des utilisateurs
-        this.utilisateur = new Utilisateur(); // Vider le formulaire
+        this.utilisateur = new User(); // Vider le formulaire
     })
   }
 
@@ -42,13 +42,13 @@ export class FormsComponent implements OnInit{
     this.utilisateurService.findOne(id).subscribe(data=>this.utilisateur=data);
   }
 
-  public editUser(user:Utilisateur){
+  public editUser(user:User){
     //navigation entre forms.Component.ts et editUser.Component.ts
     //1) Creer une variable local
     //2) Stocker cette vatiable dans le localStorage (accepte uniquement du string)
     localStorage.removeItem("userId");
-    localStorage.setItem("userId",user.idUtilisateur.toString());
-    this.router.navigate(['/base/editUser',user.idUtilisateur]);
+    localStorage.setItem("userId",user.idUser.toString());
+    this.router.navigate(['/base/editUser',user.idUser]);
   }
 
   public authenticated(){

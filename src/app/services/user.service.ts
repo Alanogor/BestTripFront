@@ -5,26 +5,26 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UtilisateurService {
+
+export class UserService {
   private baseURL="http://localhost:8080/users";
   // injection de la dépendance qui nous permet d'utiliser les verbes http :GET,PUT,DELETE et POST
   constructor(private httpClient:HttpClient) { } 
   public findAll() : Observable<any>{
-    return this.httpClient.get(this.baseURL);  // http://localhost:9090/users
+    return this.httpClient.get(this.baseURL);
   }
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete(this.baseURL+"/"+id); // http://localhost:9090/users/5
+    return this.httpClient.delete(this.baseURL+"/"+id); 
   }
   public save(user:any):Observable<any>{
     return this.httpClient.post(this.baseURL,user);
   }
-  
   public findOne(id:number):Observable<any>{
     return this.httpClient.get(this.baseURL+"/"+id);
   }
-
   public update(user:any):Observable<any>{
-    var userParse=JSON.parse(user); //communication avec serveur, convertion texte vers Json
+    var userParse = JSON.parse(user);
     return this.httpClient.put(this.baseURL+"/"+userParse.idUtilisateur,userParse);
   }
+  
 }

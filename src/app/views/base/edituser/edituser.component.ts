@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Role } from '../../../models/role';
-import { Utilisateur } from '../../../models/utilisateur';
+import { User } from '../../../models/user';
 import { RoleService } from '../../../services/role.service';
-import { UtilisateurService } from '../../../services/utilisateur.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-edituser',
@@ -12,10 +12,10 @@ import { UtilisateurService } from '../../../services/utilisateur.service';
 })
 export class EdituserComponent implements OnInit {
   editForm:FormGroup;
-  utilisateur:Utilisateur=new Utilisateur();
+  utilisateur:User=new User();
   roles:Role[]
 
-  constructor(private utilisateurService:UtilisateurService,private router:Router,private formBuilder:FormBuilder,private roleServ:RoleService) { }
+  constructor(private utilisateurService:UserService,private router:Router,private formBuilder:FormBuilder,private roleServ:RoleService) { }
 
   ngOnInit(): void {
     let userId=localStorage.getItem("userId");
