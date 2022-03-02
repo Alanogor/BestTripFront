@@ -51,7 +51,7 @@ export class FormsComponent implements OnInit{
     this.router.navigate(['/base/editUser',user.idUser]);
   }
 
-  public authenticated(){
+  /*public authenticated(){
     return this.appServ.authenticated;
   }
 
@@ -61,5 +61,5 @@ export class FormsComponent implements OnInit{
     }else{
       return false;
     }
-  }
+  }*/
 }
