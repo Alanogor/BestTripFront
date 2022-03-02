@@ -53,13 +53,14 @@ export class FormsComponent implements OnInit{
 
   /*public authenticated(){
     return this.appServ.authenticated;
-  }
+  }*/
 
   public authorities(){
-    if(this.appServ.isAdmin==true){
+    return true;
+    /*if(this.appServ.isAdmin==true){
       return true;
     }else{
       return false;
-    }
-  }*/
+    }*/
+  }
 }

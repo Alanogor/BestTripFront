@@ -1,5 +1,5 @@
 <div class="animated fadeIn">
-  <div [hidden]="!authenticated()">
+  <div > <!--[hidden]="!authenticated()"-->
     <div class="row">
       <div class="col-md-6">
         <div class="card">
@@ -10,11 +10,11 @@
             <form class="form-horizontal" (ngSubmit)="save()">
               <div class="form-group">
                 <label>Nom</label>
-                <input type="text" [(ngModel)]="utilisateur.nomUtilisateur" name="nomUtilisateur" class="form-control">
+                <input type="text" [(ngModel)]="utilisateur.nom" name="nom" class="form-control">
               </div>
               <div class="form-group">
                 <label>Prénom</label>
-                <input type="text" [(ngModel)]="utilisateur.prenomUtilisateur" name="prenomUtilisateur" class="form-control">
+                <input type="text" [(ngModel)]="utilisateur.prenom" name="prenom" class="form-control">
               </div>
               <div class="form-group">
                 <label>Username</label>
@@ -63,14 +63,14 @@
               </thead>
               <tbody>
                 <tr *ngFor="let u of utilisateurs">
-                  <td>{{u.nomUtilisateur}}</td>
-                  <td>{{u.prenomUtilisateur}}</td>
+                  <td>{{u.nom}}</td>
+                  <td>{{u.prenom}}</td>
                   <td>{{u.username}}</td>
                   <td>{{u.password}}</td>
                   <td>
-                    <button class="btn btn-outline-success" (click)="update(u.idUtilisateur)">update</button>
+                    <button class="btn btn-outline-success" (click)="update(u.idUser)">update</button>
                     <button class="btn btn-outline-warning" type="button" (click)="editUser(u)">editUser</button>
-                    <button class="btn btn-outline-danger" (click)="deleteUtilisateur(u.idUtilisateur)">Delete</button>
+                    <button class="btn btn-outline-danger" (click)="deleteUtilisateur(u.idUser)">Delete</button>
                   </td>
               </tr>
               </tbody>
@@ -90,7 +90,7 @@
       </div>
       </div>
   </div>
-  <div [hidden]="authenticated()">
+  <!--<div [hidden]="authenticated()">
     <p>Connectez-vous pour acceder a cette onglet</p>
-  </div>
+  </div>-->
 </div>

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  authenticated=false;
+  /*authenticated=false;
   responseAll: any;
   isAdmin=false;
   isUser=false;
@@ -34,5 +34,5 @@ export class AppService {
   }
   return callback && callback();
   })  
-  };
+  };*/
 }
