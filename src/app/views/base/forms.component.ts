@@ -35,6 +35,7 @@ export class FormsComponent implements OnInit{
     this.utilisateurService.save(this.utilisateur).subscribe(()=>{
         this.findAll();  // MAJ de la liste des utilisateurs
         this.utilisateur = new User(); // Vider le formulaire
+        
     })
   }
 

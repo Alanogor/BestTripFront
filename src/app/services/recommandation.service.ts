@@ -8,7 +8,7 @@ import { Recommandation } from '../models/recommandation';
 })
 export class RecommandationService {
 
-  baseURL="http://localhost:8080/recommandations";
+  baseURL="http://localhost:8080/recommandation";
 
   constructor(private httpClient:HttpClient) { }
 

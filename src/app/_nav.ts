@@ -20,6 +20,15 @@ export const navItems: INavData[] = [
         name:"Les experience",
         url:"/base/experiences"
       }
+
+      ,
+      {
+        name:"recommandation",
+        url:'/base/recommandation',
+        icon: "cil-sitemap"
+      }
+      
+
     ]
   }
 ];
