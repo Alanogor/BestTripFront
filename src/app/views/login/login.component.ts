@@ -11,7 +11,7 @@ export class LoginComponent {
   credentials={username:'',password:''};
   constructor(private appServ:AppService, private httpClient:HttpClient, private router:Router){}
   login(){
-    this.appServ.authenticate(this.credentials,()=>{this.router.navigateByUrl("/base/users")});
+    //this.appServ.authenticate(this.credentials,()=>{this.router.navigateByUrl("/base/users")});
     return false;
   }
 }
