@@ -9,7 +9,7 @@ import { Experience } from '../models/experience';
 export class ExperienceService {
   baseURL="http://localhost:8080/experience";
 
-  constructor(private experience:Experience,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);

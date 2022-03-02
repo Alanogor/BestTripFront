@@ -48,9 +48,14 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { EdituserComponent } from './edituser/edituser.component';
+
 import { RecommandationComponent } from './recommandation/recommandation.component';
 import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
 import { VoirRecommandationComponent } from './voir-recommandation/voir-recommandation.component';
+import { ExperienceService } from '../../services/experience.service';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+
 
 @NgModule({
   imports: [
@@ -81,9 +86,16 @@ import { VoirRecommandationComponent } from './voir-recommandation/voir-recomman
     TooltipsComponent,
     NavbarsComponent,
     EdituserComponent,
+
     RecommandationComponent,
     AjouterRecommandationComponent,
     VoirRecommandationComponent
+
+    ExperienceViewComponent,
+    AjouterExperienceComponent
+  ],providers:[
+    ExperienceService
+
   ]
 })
 export class BaseModule { }
