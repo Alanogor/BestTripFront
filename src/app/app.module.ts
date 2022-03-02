@@ -47,6 +47,12 @@ import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { UserService } from './services/user.service';
+import { CommentaireExperienceService } from './services/commentaire-experience.service';
+import { CommentaireGuideService } from './services/commentaire-guide.service';
+import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
+import { ExperienceService } from './services/experience.service';
+import { GuideService } from './services/guide.service';
+import { RecommandationService } from './services/recommandation.service';
 
 //Intercepte toute les requete pour les controler
 @Injectable()
@@ -96,6 +102,12 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     UserService,
     RoleService,
     AppService,
+    CommentaireExperienceService,
+    CommentaireGuideService,
+    CommentaireRecommandationService,
+    ExperienceService,
+    GuideService,
+    RecommandationService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true} //fais appelle a XhrInterceptor
   ],
   bootstrap: [ AppComponent ]
