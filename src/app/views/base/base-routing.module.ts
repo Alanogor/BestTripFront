@@ -14,6 +14,7 @@ import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { ExperienceComponent } from '../buttons/experience/experience.component';
 
 const routes: Routes = [
   {
@@ -24,11 +25,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'users'
+        component: ExperienceComponent,
+        redirectTo: 'experience'
       },
       {
         path: 'users',
-        component: FormsComponent,
         data: {
           title: 'Les utilisateurs'
         }
