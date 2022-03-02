@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CommentaireExperience } from 'app/models/commentaire-experience';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CommentaireExperienceService {
   baseURL="http://localhost:8080/commentaire_experience";
 
-  constructor(private commentExperience:CommentaireExperience,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL)

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Guide } from 'app/models/guide';
 import { Observable } from 'rxjs';
+import { Guide } from '../models/guide';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class GuideService {
 
   baseURL="http://localhost:8080/guide";
 
-  constructor(private guide:Guide,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);
