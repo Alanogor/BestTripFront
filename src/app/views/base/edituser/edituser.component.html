@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+            <strong>Modifier un utilisateur</strong>
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal" (ngSubmit)="updateUtilisateur()" [formGroup]="editForm">
+                    <div class="form-group">
+                        <label>Nom:</label>
+                        <input type="text" [(ngModel)]="utilisateur.nomUtilisateur" formControlName="nomUtilisateur" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Prénom:</label>
+                        <input type="text" [(ngModel)]="utilisateur.prenomUtilisateur" formControlName="prenomUtilisateur" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" [(ngModel)]="utilisateur.username" formControlName="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="text" [(ngModel)]="utilisateur.password" formControlName="password" class="form-control">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Modifier</button>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
