@@ -79,7 +79,6 @@ import { ExperienceComponent } from '../buttons/experience/experience.component'
     TooltipsComponent,
     NavbarsComponent,
     EdituserComponent,
-    ExperienceComponent
   ]
 })
 export class BaseModule { }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ButtonsComponent } from './buttons.component';
 import { DropdownsComponent } from './dropdowns.component';
 import { BrandButtonsComponent } from './brand-buttons.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
         redirectTo: 'buttons'
       },
       {
-        path: 'buttons',
-        component: ButtonsComponent,
+        path: 'experience',
+        component: ExperienceComponent,
         data: {
           title: 'Buttons'
         }
