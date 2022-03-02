@@ -1,0 +1,21 @@
+<table>
+    <tr><th>{{experience.titreExperience}}</th></tr>
+    <tr><td>{{experience.descriptionExperience}}</td></tr>
+    <tr>
+        <td>{{experience.ratingExperience}}</td>
+        <td>{{experience.prixExperience}}</td>
+    </tr>
+</table>
+<form (ngSubmit)="save()">
+    <tr>
+        <td>Commentaire: </td>
+        <td><textarea [(ngModel)]="commentaireExperience.commentaireComExperience" name="commentaireComExperience" rows="4"></textarea></td>
+    </tr>
+    <tr>
+        <td>note:</td> 
+        <td><input type="number" [(ngModel)]="commentaireExperience.ratingComExperience" name="ratingComExperience"/></td>
+    </tr>
+    <tr>
+        <button class="btn btn-outline-success">Envoye</button>
+    </tr>
+</form>

@@ -14,6 +14,8 @@ import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
 
 const routes: Routes = [
   {
@@ -43,8 +45,22 @@ const routes: Routes = [
       {
         path:"editUser/:id",
         component:EdituserComponent,
-      }
-          
+      },
+      {
+        path:"experiences",
+        component:CardsComponent,
+        data:{
+            title:"Les experiences"
+        }
+      },
+      {
+        path:"experienceview/:id",
+        component:ExperienceViewComponent,
+      },
+      {
+        path:"ajouterexperience",
+        component: AjouterExperienceComponent,
+      } 
     ]
   }
 ];

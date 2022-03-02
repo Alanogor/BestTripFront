@@ -1,10 +1,32 @@
+import { Expression } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Experience } from '../../models/experience';
+import { ExperienceService } from '../../services/experience.service';
 
 @Component({
   templateUrl: 'cards.component.html'
 })
 export class CardsComponent {
+  experiences!:Expression[];
+  experience!:Experience;
+  constructor(private experienceService:ExperienceService,private router:Router) { }
 
-  constructor() { }
+  ngOnInit(){
+    this.findAll();
+  }
 
+  public findAll(){
+    this.experienceService.findAll().subscribe(data=>this.experiences=data);
+  }
+
+  public viewExperience(experience:Experience){
+    localStorage.removeItem("idExperience");
+    localStorage.setItem("idExperience",experience.idExperience.toString());
+    this.router.navigate(['/base/experienceview',experience.idExperience])
+  }
+
+  public creationExperience(){
+    this.router.navigate(['/base/ajouterexperience'])
+  }
 }

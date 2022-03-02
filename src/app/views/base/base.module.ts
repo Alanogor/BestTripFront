@@ -48,6 +48,9 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { EdituserComponent } from './edituser/edituser.component';
+import { ExperienceService } from '../../services/experience.service';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
 
 @NgModule({
   imports: [
@@ -77,7 +80,11 @@ import { EdituserComponent } from './edituser/edituser.component';
     ProgressComponent,
     TooltipsComponent,
     NavbarsComponent,
-    EdituserComponent
+    EdituserComponent,
+    ExperienceViewComponent,
+    AjouterExperienceComponent
+  ],providers:[
+    ExperienceService
   ]
 })
 export class BaseModule { }

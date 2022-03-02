@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Experience } from 'app/models/experience';
 import { Observable } from 'rxjs';
+import { Experience } from '../models/experience';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ExperienceService {
   baseURL="http://localhost:8080/experience";
 
-  constructor(private experience:Experience,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);
