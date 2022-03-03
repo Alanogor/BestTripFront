@@ -30,15 +30,14 @@ export class RecommandationComponent implements OnInit {
     this.router.navigate(['/base/ajouterrecommandation']);
   }
   edit(recom:Recommandation){
-    localStorage.removeItem("editUserId");
-    localStorage.setItem("editUserId",recom.idRecommandation.toString());
-    this.router.navigate(['/base/editUser',recom.idRecommandation]);// localhost:4200/#/base/editUser/5
+    localStorage.removeItem("recommandationId");
+    localStorage.setItem("recommandationId",recom.idRecommandation.toString());
+    this.router.navigate(['/base/editrecommandation',recom.idRecommandation]);// localhost:4200/#/base/editUser/5
   }
-  voir(recom:Recommandation){
-    localStorage.removeItem("voirId");
-    localStorage.setItem("voirId",recom.idRecommandation.toString());
-    this.router.navigate(['/base/voirrecommandation',recom.idRecommandation]);
-
+  public voir(recommandation:Recommandation){
+    localStorage.removeItem("idRecommandation");
+    localStorage.setItem("idRecommandation",recommandation.idRecommandation.toString());
+    this.router.navigate(['/base/recommandationview',recommandation.idRecommandation])
   }
   
 

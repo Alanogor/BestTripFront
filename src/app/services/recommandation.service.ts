@@ -28,7 +28,8 @@ export class RecommandationService {
     return this.httpClient.delete(this.baseURL+"/"+id);
   }
 
-  public update(id:number,obj:Recommandation){
-    return this.httpClient.put(this.baseURL+"/"+id,obj);
+  public update(user:any):Observable<any>{
+    var userParse=JSON.parse(user); //communication avec serveur, convertion texte vers Json
+    return this.httpClient.put(this.baseURL+"/"+userParse.idRecommandation,userParse);
   }
 }
