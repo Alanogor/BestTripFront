@@ -14,6 +14,10 @@ import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { GuideComponent } from './guide/guide.component';
+import { ViewGuideComponent } from './view-guide/view-guide.component';
+import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
+import { EditGuideComponent } from './edit-guide/edit-guide.component';
 
 import { RecommandationComponent } from './recommandation/recommandation.component';
 import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
@@ -21,8 +25,12 @@ import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter
 
 import { ExperienceViewComponent } from './experience-view/experience-view.component';
 import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+
 import { RecommandationviewComponent } from './recommandationview/recommandationview.component';
 import { EditrecommandationComponent } from './editrecommandation/editrecommandation.component';
+
+import { EditExperienceComponent } from './edit-experience/edit-experience.component';
+
 
 
 const routes: Routes = [
@@ -51,6 +59,13 @@ const routes: Routes = [
         }
       },
       {
+        path:"guides",
+        component:GuideComponent,
+        data:{
+          title:'Les guides'
+        }
+      },
+      {
         path: 'recommandation',
         component: RecommandationComponent,
         data: {
@@ -69,6 +84,18 @@ const routes: Routes = [
         path:"editUser/:id",
         component:EdituserComponent,
       },
+      {
+        path:"viewGuide/:id",
+        component:ViewGuideComponent,
+      },
+      {
+        path:"ajouterGuide",
+        component:AjouterGuideComponent,
+      },
+      {
+        path:"editGuide/:id",
+        component:EditGuideComponent,
+      },   
       {
         path:"experiences",
         component:CardsComponent,
@@ -91,7 +118,11 @@ const routes: Routes = [
       {
         path:"editrecommandation/:id",
         component:EditrecommandationComponent,
-      }
+      },
+      {
+        path:"editexperience/:id",
+        component: EditExperienceComponent,
+      }  
     ]
   }
 ];

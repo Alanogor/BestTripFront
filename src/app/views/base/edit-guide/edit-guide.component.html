@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+            <strong>Modifier un guide</strong>
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal" (ngSubmit)="updateGuide()" [formGroup]="editForm">
+                    <div class="form-group">
+                        <label>Description :</label>
+                        <input type="text" [(ngModel)]="guide.descriptionGuide" formControlName="descriptionGuide" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Pays:</label>
+                        <input type="text" [(ngModel)]="guide.paysGuide" formControlName="paysGuide" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Ville:</label>
+                        <input type="text" [(ngModel)]="guide.villeGuide" formControlName="villeGuide" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Prix:</label>
+                        <input type="number" [(ngModel)]="guide.prixGuide" formControlName="prixGuide" class="form-control">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Modifier</button>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    

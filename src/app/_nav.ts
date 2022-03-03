@@ -17,6 +17,10 @@ export const navItems: INavData[] = [
         icon: "cil-sitemap"
       },
       {
+        name:"Les guides",
+        url:'/base/guides',
+      },
+      {
         name:"Les experience",
         url:"/base/experiences"
       }
