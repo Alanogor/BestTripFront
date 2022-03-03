@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Recommandation } from 'app/models/recommandation';
 import { Observable } from 'rxjs';
+import { Recommandation } from '../models/recommandation';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class RecommandationService {
 
   baseURL="http://localhost:8080/recommandations";
 
-  constructor(private recommandation:Recommandation,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);

@@ -21,15 +21,17 @@ export class EdituserComponent implements OnInit {
     let userId=localStorage.getItem("userId");
     if (!userId){
       alert("Invalid Action!!");
-      this.router.navigate(["/base/forms"]);
+      this.router.navigate(["/base/users"]);
       return;
     }
     this.editForm=this.formBuilder.group({
       idUtilisateur:[],
-      nomUtilisateur:['',Validators.required],
-      prenomUtilisateur:['',Validators.required],
+      nom:['',Validators.required],
+      prenom:['',Validators.required],
+      email:['',Validators.required],
       username:['',Validators.required],
       password:['',Validators.required],
+      newsLetter:[''],
       enabled:[''],
       roles:['']
     });

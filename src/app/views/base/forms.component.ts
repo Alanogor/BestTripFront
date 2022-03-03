@@ -25,42 +25,41 @@ export class FormsComponent implements OnInit{
     this.roleService.findAll().subscribe(data =>{this.roles = data;});
   }
 
-  deleteUtilisateur(id:number){
-    this.utilisateurService.delete(id).subscribe(()=>{this.findAll()}) // () => {this.findAll()} 
+  deleteUser(id:number){
+    console.log("id component"+id);
+    this.utilisateurService.delete(id).subscribe(()=>{this.findAll()})  
   }
+
   save(){
     // On utilise la fonction save
     // MAJ de la liste des utilisateurs dans la page web
     // Vider le formulaire  
+    this.utilisateur.roles = this.roles.libelle.user;
+    this.utilisateur.newsLetter = true;
     this.utilisateurService.save(this.utilisateur).subscribe(()=>{
         this.findAll();  // MAJ de la liste des utilisateurs
         this.utilisateur = new User(); // Vider le formulaire
+        //this.roles.libelle = libelle.user;
+
     })
   }
 
-  public update(id:number){
-    this.utilisateurService.findOne(id).subscribe(data=>this.utilisateur=data);
-  }
-
-  public editUser(user:User){
-    //navigation entre forms.Component.ts et editUser.Component.ts
-    //1) Creer une variable local
-    //2) Stocker cette vatiable dans le localStorage (accepte uniquement du string)
+  editUser(user:User){
+    console.log(user);
     localStorage.removeItem("userId");
-    localStorage.setItem("userId",user.idUser.toString());
-    this.router.navigate(['/base/editUser',user.idUser]);
+    localStorage.setItem("userId",user.idUtilisateur.toString());
+    this.router.navigate(['/base/editUser',user.idUtilisateur]);
   }
 
-  /*public authenticated(){
+  public authenticated(){
     return this.appServ.authenticated;
-  }*/
+  }
 
   public authorities(){
-    return true;
-    /*if(this.appServ.isAdmin==true){
+    if(this.appServ.isAdmin==true){
       return true;
     }else{
       return false;
-    }*/
+    }
   }
 }

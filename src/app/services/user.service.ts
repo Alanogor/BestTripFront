@@ -14,6 +14,7 @@ export class UserService {
     return this.httpClient.get(this.baseURL);
   }
   public delete(id:number):Observable<any>{
+    console.log("id service"+id);
     return this.httpClient.delete(this.baseURL+"/"+id); 
   }
   public save(user:any):Observable<any>{

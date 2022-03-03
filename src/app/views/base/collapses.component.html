@@ -24,7 +24,7 @@
     <div class="col-lg-6">
       <div class="card">
         <div class="card-header">
-          <i class="fa fa-align-justify"></i> Les utilisateurs
+          Les rôles
         </div>
         <div class="card-body">
           <table class="table">
@@ -37,7 +37,7 @@
             <tbody>
               <tr *ngFor="let r of roles">
                 <td>{{r.libelle}}</td>
-                <td><button class="btn btn-block btn-danger active" (click)="delete(r.idRole)">Delete</button></td>
+                <td><button class="btn btn-outline-danger" (click)="delete(r.idRole)">Delete</button></td>
             </tr>
             </tbody>
           </table>

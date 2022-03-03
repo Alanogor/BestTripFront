@@ -15,6 +15,7 @@ import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { EdituserComponent } from './edituser/edituser.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +27,7 @@ const routes: Routes = [
         path: '',
         redirectTo: 'users'
       },
-      {
+      { 
         path: 'users',
         component: FormsComponent,
         data: {
@@ -37,11 +38,11 @@ const routes: Routes = [
         path:"roles",
         component:CollapsesComponent,
         data:{
-          title:'Les roles'
+          title:'Les rôles'
         }
       },
       {
-        path:"editUser/:id",
+        path:'editUser/:id',
         component:EdituserComponent,
       }
           
