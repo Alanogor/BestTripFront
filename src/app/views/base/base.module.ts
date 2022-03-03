@@ -48,6 +48,10 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { EdituserComponent } from './edituser/edituser.component';
+import { GuideComponent } from './guide/guide.component';
+import { EditGuideComponent } from './edit-guide/edit-guide.component';
+import { ViewGuideComponent } from './view-guide/view-guide.component';
+import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
 
 import { RecommandationComponent } from './recommandation/recommandation.component';
 import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
@@ -85,14 +89,16 @@ import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experie
     TooltipsComponent,
     NavbarsComponent,
     EdituserComponent,
-
+    GuideComponent,
+    EditGuideComponent,
+    ViewGuideComponent,
+    AjouterGuideComponent,
     RecommandationComponent,
     AjouterRecommandationComponent,
     ExperienceViewComponent,
     AjouterExperienceComponent
   ],providers:[
     ExperienceService
-
   ]
 })
 export class BaseModule { }

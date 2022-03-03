@@ -1,0 +1,55 @@
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Tous nos guides
+            <button class="btn-outline-success" (click)="ajouterGuide()">Ajouter un guide</button>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Pays</th>
+                  <th>Ville</th>
+                  <th>Prix</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let u of guides">
+                  <td>{{u.descriptionGuide}}</td>
+                  <td>{{u.paysGuide}}</td>
+                  <td>{{u.villeGuide}}</td>
+                  <td>{{u.prixGuide}}</td>
+                  <td>{{u.mediasGuide}}</td>
+                  
+                  
+                  <td>
+                    <button class="btn btn-outline-success" (click)="viewGuide(u)">Voir</button>
+                    <button class="btn btn-outline-warning" type="button" (click)="editGuide(u)">editGuide</button>
+                    <button class="btn btn-outline-danger" (click)="deleteGuide(u.idGuide)">Delete</button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+        <!--   <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>-->
+          </div>
+        </div>
+      </div>
+      </div>
+  
+  <!--<div [hidden]="authenticated()">
+    <p>Connectez-vous pour acceder a cette onglet</p>
+  </div>-->
+
