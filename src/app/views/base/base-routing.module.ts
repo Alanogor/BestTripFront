@@ -19,6 +19,14 @@ import { ViewGuideComponent } from './view-guide/view-guide.component';
 import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
 import { EditGuideComponent } from './edit-guide/edit-guide.component';
 
+import { RecommandationComponent } from './recommandation/recommandation.component';
+import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
+
+
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -52,6 +60,21 @@ const routes: Routes = [
         }
       },
       {
+        path: 'recommandation',
+        component: RecommandationComponent,
+        data: {
+          title: 'recommandation'
+        }
+      }
+      ,
+      {
+        path: 'ajouterrecommandation',
+        component: AjouterRecommandationComponent,
+        data: {
+          title: 'recommandation'
+        }
+      },
+      {
         path:"editUser/:id",
         component:EdituserComponent,
       },
@@ -66,8 +89,22 @@ const routes: Routes = [
       {
         path:"editGuide/:id",
         component:EditGuideComponent,
+      },   
+      {
+        path:"experiences",
+        component:CardsComponent,
+        data:{
+            title:"Les experiences"
+        }
       },
-          
+      {
+        path:"experienceview/:id",
+        component:ExperienceViewComponent,
+      },
+      {
+        path:"ajouterexperience",
+        component: AjouterExperienceComponent,
+      } 
     ]
   }
 ];

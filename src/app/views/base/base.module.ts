@@ -53,6 +53,13 @@ import { EditGuideComponent } from './edit-guide/edit-guide.component';
 import { ViewGuideComponent } from './view-guide/view-guide.component';
 import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
 
+import { RecommandationComponent } from './recommandation/recommandation.component';
+import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
+import { ExperienceService } from '../../services/experience.service';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -86,6 +93,12 @@ import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
     EditGuideComponent,
     ViewGuideComponent,
     AjouterGuideComponent,
+    RecommandationComponent,
+    AjouterRecommandationComponent,
+    ExperienceViewComponent,
+    AjouterExperienceComponent
+  ],providers:[
+    ExperienceService
   ]
 })
 export class BaseModule { }

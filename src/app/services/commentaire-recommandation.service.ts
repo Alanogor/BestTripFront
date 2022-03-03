@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CommentaireRecommandation } from 'app/models/commentaire-recommandation';
 import { Observable } from 'rxjs';
+import { CommentaireRecommandation } from '../models/commentaire-recommandation';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class CommentaireRecommandationService {
  
   baseURL="http://localhost:8080/commentairerecommandations";
 
-  constructor(private commentairerecommandation:CommentaireRecommandation,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);

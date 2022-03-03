@@ -49,6 +49,8 @@ import { AppService } from './app.service';
 import { UserService } from './services/user.service';
 import { CommentaireGuideService } from './services/commentaire-guide.service';
 import { GuideService } from './services/guide.service';
+import { ExperienceService } from './services/experience.service';
+
 
 //Intercepte toute les requete pour les controler
 @Injectable()
@@ -100,6 +102,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     AppService,
     CommentaireGuideService,
     GuideService,
+    ExperienceService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true} //fais appelle a XhrInterceptor
   ],
   bootstrap: [ AppComponent ]
