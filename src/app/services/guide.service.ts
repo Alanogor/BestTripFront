@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Guide } from 'app/models/guide';
+
 import { Observable } from 'rxjs';
+import { Guide } from '../models/guide';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class GuideService {
 
   baseURL="http://localhost:8080/guide";
 
-  constructor(private guide:Guide,private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   public findAll():Observable<any>{
     return this.httpClient.get(this.baseURL);
@@ -24,12 +25,25 @@ export class GuideService {
     return this.httpClient.post(this.baseURL,obj);
   }
 
+  /*public save(file:File, guide:Guide):Observable<any>{
+		const formData = new FormData();
+		formData.append('nomU', guide.description);
+		formData.append('prenomU', guide.prenomUtilisateur);
+		formData.append('usernameU', guide.username);
+		formData.append('passwordU', guide.password);
+		formData.append('fileU', file);
+		const req = new HttpRequest('POST', this.baseURL, formData,
+		{reportProgress:true, responseType:'text'});
+		return this.httpClient.request(req);
+	}*/
+
   public delete(id:number):Observable<any>{
     return this.httpClient.delete(this.baseURL+"/"+id);
   }
 
-  public update(id:number,obj:Guide){
-    return this.httpClient.put(this.baseURL+"/"+id,obj);
+  public update(guide:any):Observable<any>{
+    var guideParse=JSON.parse(guide); //communication avec serveur, convertion texte vers Json
+    return this.httpClient.put(this.baseURL+"/"+guideParse.idGuide,guideParse);
   }
 
 }

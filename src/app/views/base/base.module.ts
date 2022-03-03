@@ -48,6 +48,10 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { EdituserComponent } from './edituser/edituser.component';
+import { GuideComponent } from './guide/guide.component';
+import { EditGuideComponent } from './edit-guide/edit-guide.component';
+import { ViewGuideComponent } from './view-guide/view-guide.component';
+import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
 
 @NgModule({
   imports: [
@@ -77,7 +81,11 @@ import { EdituserComponent } from './edituser/edituser.component';
     ProgressComponent,
     TooltipsComponent,
     NavbarsComponent,
-    EdituserComponent
+    EdituserComponent,
+    GuideComponent,
+    EditGuideComponent,
+    ViewGuideComponent,
+    AjouterGuideComponent,
   ]
 })
 export class BaseModule { }

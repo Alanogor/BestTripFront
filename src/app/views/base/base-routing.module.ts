@@ -14,6 +14,10 @@ import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { GuideComponent } from './guide/guide.component';
+import { ViewGuideComponent } from './view-guide/view-guide.component';
+import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
+import { EditGuideComponent } from './edit-guide/edit-guide.component';
 
 const routes: Routes = [
   {
@@ -41,9 +45,28 @@ const routes: Routes = [
         }
       },
       {
+        path:"guides",
+        component:GuideComponent,
+        data:{
+          title:'Les guides'
+        }
+      },
+      {
         path:"editUser/:id",
         component:EdituserComponent,
-      }
+      },
+      {
+        path:"viewGuide/:id",
+        component:ViewGuideComponent,
+      },
+      {
+        path:"ajouterGuide",
+        component:AjouterGuideComponent,
+      },
+      {
+        path:"editGuide/:id",
+        component:EditGuideComponent,
+      },
           
     ]
   }

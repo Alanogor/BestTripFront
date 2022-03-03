@@ -1,0 +1,21 @@
+<table>
+    <td>{{guide.descriptionGuide}}</td>
+    <td>{{guide.paysGuide}}</td>
+    <td>{{guide.villeGuide}}</td>
+    <td>{{guide.prixGuide}}</td>
+    <td>{{guide.mediasGuide}}</td>
+</table>
+
+<form (ngSubmit)="save()">
+    <tr>
+        <td>Commentaire :</td>
+        <td><textarea [(ngModel)]="commentaireGuide.commentaireComGuide" name="commentaireComGuide" rows="4"></textarea></td>
+    </tr>
+    <tr>
+        <td>Note : </td>
+        <td><input type="number" [(ngModel)]="commentaireGuide.ratingComGuide" name="ratingComGuide"/></td>
+    </tr>
+    <tr>
+        <button class="btn-outline-success">Envoyer</button>
+    </tr>
+</form>
