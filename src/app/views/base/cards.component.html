@@ -1,11 +1,38 @@
-<button class="btn btn-outline-success" (click)="creationExperience()">Ajouter une Experience</button>
-
-<table *ngFor="let e of experiences">
-    <tr><th>{{e.titreExperience}}</th></tr>
-    <tr><td>{{e.descriptionExperience}}</td></tr>
-    <tr>
-        <td>{{e.ratingExperience}}</td>
-        <td>{{e.prixExperience}}</td>
-        <td><button (click)="viewExperience(e)">Voir</button></td>
-    </tr>
-</table>
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+             Les experiences
+            <button class="btn btn-outline-success" (click)="creationExperience()">Ajouter une experience</button>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Titre</th>
+                  <th>Description</th>
+                  <th>Prix</th>
+                  <th>Rating</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let e of experiences" ><!--[hidden]="authorities()"-->
+                  <td>{{e.titreExperience}}</td>
+                  <td>{{e.descriptionExperience}}</td>
+                  <td>{{e.ratingExperience}}</td>
+                  <td>{{e.prixExperience}}</td>
+                  <td>
+                    <button class="btn btn-outline-success" (click)="viewExperience(e)">Voir</button>
+                    <button class = "btn btn-outline-warning" (click)="editExperience(e)">Editer</button>
+                    <button class="btn btn-outline-danger" (click)="delete(e.idExperience)">Delete</button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
+  

@@ -27,8 +27,9 @@ export class ExperienceService {
     return this.httpClient.delete(this.baseURL+"/"+id);
   }
 
-  public update(id:number,obj:Experience){
-    return this.httpClient.put(this.baseURL+"/"+id,obj);
+  public update(experience:any):Observable<any>{
+    var experienceParse=JSON.parse(experience); //communication avec serveur, convertion texte vers Json
+    return this.httpClient.put(this.baseURL+"/"+experienceParse.idExperience,experienceParse);
   }
 
 }
