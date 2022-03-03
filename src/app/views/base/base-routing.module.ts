@@ -21,6 +21,8 @@ import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter
 
 import { ExperienceViewComponent } from './experience-view/experience-view.component';
 import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+import { RecommandationviewComponent } from './recommandationview/recommandationview.component';
+import { EditrecommandationComponent } from './editrecommandation/editrecommandation.component';
 
 
 const routes: Routes = [
@@ -81,7 +83,15 @@ const routes: Routes = [
       {
         path:"ajouterexperience",
         component: AjouterExperienceComponent,
-      } 
+      } ,
+      {
+        path:"recommandationview/:id",
+        component:RecommandationviewComponent,
+      },
+      {
+        path:"editrecommandation/:id",
+        component:EditrecommandationComponent,
+      }
     ]
   }
 ];

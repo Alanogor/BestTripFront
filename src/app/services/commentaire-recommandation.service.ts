@@ -9,7 +9,7 @@ import { CommentaireRecommandation } from '../models/commentaire-recommandation'
 export class CommentaireRecommandationService {
 
  
-  baseURL="http://localhost:8080/commentairerecommandations";
+  baseURL="http://localhost:8080/commentaire_recommandation";
 
   constructor(private httpClient:HttpClient) { }
 
