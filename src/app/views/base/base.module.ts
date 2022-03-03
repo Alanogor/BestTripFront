@@ -54,6 +54,7 @@ import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter
 import { ExperienceService } from '../../services/experience.service';
 import { ExperienceViewComponent } from './experience-view/experience-view.component';
 import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+import { EditExperienceComponent } from './edit-experience/edit-experience.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experie
     RecommandationComponent,
     AjouterRecommandationComponent,
     ExperienceViewComponent,
-    AjouterExperienceComponent
+    AjouterExperienceComponent,
+    EditExperienceComponent
   ],providers:[
     ExperienceService
 

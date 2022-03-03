@@ -21,6 +21,7 @@ import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter
 
 import { ExperienceViewComponent } from './experience-view/experience-view.component';
 import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+import { EditExperienceComponent } from './edit-experience/edit-experience.component';
 
 
 const routes: Routes = [
@@ -81,7 +82,11 @@ const routes: Routes = [
       {
         path:"ajouterexperience",
         component: AjouterExperienceComponent,
-      } 
+      },
+      {
+        path:"editexperience/:id",
+        component: EditExperienceComponent,
+      }  
     ]
   }
 ];

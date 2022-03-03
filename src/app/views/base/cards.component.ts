@@ -26,7 +26,19 @@ export class CardsComponent {
     this.router.navigate(['/base/experienceview',experience.idExperience])
   }
 
+  public editExperience(experience:Experience){
+    localStorage.removeItem("idExperience");
+    localStorage.setItem("idExperience",experience.idExperience.toString());
+    this.router.navigate(['/base/editexperience',experience.idExperience])
+  }
+
   public creationExperience(){
     this.router.navigate(['/base/ajouterexperience'])
+  }
+
+  public delete(id:number){
+    this.experienceService.delete(id).subscribe(()=>
+      this.findAll()
+    );
   }
 }
