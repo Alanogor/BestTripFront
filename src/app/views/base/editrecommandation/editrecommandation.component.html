@@ -1,0 +1,41 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+            <strong>Modifier une recommandation</strong>
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal" (ngSubmit)="update()" [formGroup]="editForm">
+                    <div class="form-group">
+                        <label>Titre:</label>
+                        <input type="text" [(ngModel)]="recommandation.titreRecommandation" formControlName="titreRecommandation" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>description:</label>
+                        <input type="text" [(ngModel)]="recommandation.descriptionRecommandation" formControlName="descriptionRecommandation" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>type:</label>
+                        <input type="text" [(ngModel)]="recommandation.typeRecommandation" formControlName="typeRecommandation" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>pays:</label>
+                        <input type="text" [(ngModel)]="recommandation.paysRecommandation" formControlName="paysRecommandation" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>prix:</label>
+                        <input type="text" [(ngModel)]="recommandation.prixRecommandation" formControlName="prixRecommandation" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>rating:</label>
+                        <input type="text" [(ngModel)]="recommandation.ratingRecommandation" formControlName="ratingRecommandation" class="form-control">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Modifier</button>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
