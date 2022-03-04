@@ -6,4 +6,5 @@ export class Recommandation {
     paysRecommandation!:string;
     prixRecommandation!:number;
     ratingRecommandation!:number;
+    mediaRecommandation!:File;
 }

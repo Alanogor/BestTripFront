@@ -16,6 +16,7 @@
                 <th>pays</th>
                 <th>prix</th>
                 <th>rating</th>
+                <th>media</th>
               </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 <td>{{u.paysRecommandation}}</td>
                 <td>{{u.prixRecommandation}}</td>
                 <td>{{u.ratingRecommandation}}</td>
+                <td><img src="data:image/jpeg;base64,{{u.mediaRecommandation}}" height="120" width="120"/></td>
                 <td>
                   <button class="btn btn-outline-danger" (click)="delete(u.idRecommandation)">Delete</button>
                   <button class="btn btn-outline-success" (click)="voir(u)">Voir</button>
