@@ -103,7 +103,7 @@ import { EditExperienceComponent } from './edit-experience/edit-experience.compo
     ExperienceViewComponent,
     AjouterExperienceComponent,
     RecommandationviewComponent,
-    EditrecommandationComponent
+    EditrecommandationComponent,
     EditExperienceComponent
   ],providers:[
     ExperienceService
