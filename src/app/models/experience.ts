@@ -1,3 +1,6 @@
+import { Byte } from "@angular/compiler/src/util";
+import { CommentaireExperience } from "./commentaire-experience";
+
 export class Experience {
     idExperience!:number;
     titreExperience!:string;
@@ -5,5 +8,6 @@ export class Experience {
     ratingExperience!:number;
     typeExperience!:string;
     prixExperience!:number;
-
+    mediasExperience!:File;
+    comExperience!:CommentaireExperience[];
 }
