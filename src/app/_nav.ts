@@ -7,6 +7,11 @@ export const navItems: INavData[] = [
     icon: 'icon-puzzle',
     children: [
       {
+        name: 'Accueil',
+        url: '/base/home',
+        icon: 'cil-home'
+      },
+      {
         name: 'Les utilisateurs',
         url: '/base/users',
         icon: 'icon-user'

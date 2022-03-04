@@ -9,7 +9,7 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 export class CarouselsComponent implements OnDestroy {
 
-  myInterval: number | false = 6000;
+  myInterval: number | false = 3500;
   slides: any[] = [];
   activeSlideIndex: number = 0;
   noWrapSlides: boolean = false;

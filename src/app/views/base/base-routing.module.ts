@@ -27,6 +27,13 @@ const routes: Routes = [
         path: '',
         redirectTo: 'users'
       },
+      {
+        path: 'home',
+        component: CarouselsComponent,
+        data: {
+          title: 'Accueil'
+        }
+      },
       { 
         path: 'users',
         component: FormsComponent,

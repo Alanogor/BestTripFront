@@ -1,5 +1,5 @@
 <div class="animated fadeIn">
-  <div class="row">
+  <div class="row" [hidden]="!authoritiesA()">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div><!--/.row-->
-  <div class="row">
+  <div class="row" [hidden]="!authoritiesA()">
     <div class="col-lg-6">
       <div class="card">
         <div class="card-header">
