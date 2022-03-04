@@ -9,7 +9,24 @@ export const navItems: INavData[] = [
       {
         name: 'Accueil',
         url: '/base/home',
-        icon: 'cil-home'
+        icon: 'cil-flight-takeoff'
+      },
+      {
+        name:"Les guides",
+        url:'/base/guides',
+        icon:"cil-book"
+      },
+      {
+        name:"Les experiences",
+        url:"/base/experiences",
+        icon:"cil-camera"
+      }
+
+      ,
+      {
+        name:"recommandation",
+        url:'/base/recommandation',
+        icon: "cil-lightbulb ampoule"
       },
       {
         name: 'Les utilisateurs',
@@ -21,22 +38,6 @@ export const navItems: INavData[] = [
         url:'/base/roles',
         icon: "cil-sitemap"
       },
-      {
-        name:"Les guides",
-        url:'/base/guides',
-      },
-      {
-        name:"Les experience",
-        url:"/base/experiences"
-      }
-
-      ,
-      {
-        name:"recommandation",
-        url:'/base/recommandation',
-        icon: "cil-sitemap"
-      }
-      
 
     ]
   }

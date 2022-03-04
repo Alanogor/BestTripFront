@@ -15,7 +15,7 @@ export class RecommandationComponent implements OnInit {
        
   recommandation: Recommandation = new Recommandation(); 
   
-  constructor(private appService : AppService,private recommandationService:RecommandationService,private router:Router) { } 
+  constructor(private appServ : AppService,private recommandationService:RecommandationService,private router:Router) { } 
   ngOnInit(): void {
     this.findAll();
   }
@@ -40,5 +40,16 @@ export class RecommandationComponent implements OnInit {
     this.router.navigate(['/base/recommandationview',recommandation.idRecommandation])
   }
   
+  public authenticated(){
+    return this.appServ.authenticated;
+  }
+
+  public authorities(){
+    if(this.appServ.isAdmin==true){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
 }

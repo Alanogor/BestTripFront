@@ -42,11 +42,7 @@ export class FormsComponent implements OnInit{
     })
   }
 
-
-    })
-  }
-
-  editUser(user:User){
+  public editUser(user:User){
     console.log(user);
     localStorage.removeItem("userId");
     localStorage.setItem("userId",user.idUtilisateur.toString());

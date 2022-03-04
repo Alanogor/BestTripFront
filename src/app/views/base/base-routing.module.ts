@@ -43,7 +43,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'users'
+        redirectTo: '/base/home',
+        pathMatch: 'full',
       },
       {
         path: 'home',

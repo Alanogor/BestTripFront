@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppService } from '../../../app.service';
 import { CommentaireExperience } from '../../../models/commentaire-experience';
 import { Experience } from '../../../models/experience';
 import { CommentaireExperienceService } from '../../../services/commentaire-experience.service';
@@ -16,7 +17,7 @@ export class ExperienceViewComponent implements OnInit {
   commentaireExperience=new CommentaireExperience();
   commentaires!:any;
 
-  constructor(private router:Router,private formBuilder:FormBuilder,private commentaireExperienceService:CommentaireExperienceService,private experienceService:ExperienceService) {
+  constructor(private appServ:AppService,private router:Router,private formBuilder:FormBuilder,private commentaireExperienceService:CommentaireExperienceService,private experienceService:ExperienceService) {
   }
 
   ngOnInit(): void {
@@ -48,5 +49,16 @@ export class ExperienceViewComponent implements OnInit {
 
   findAllCommmentaire(id:number){
     this.commentaireExperienceService.findByCommentaire(id).subscribe(data=>this.commentaires=data);
+  }
+  public authenticated(){
+    return this.appServ.authenticated;
+  }
+
+  public authorities(){
+    if(this.appServ.isAdmin==true){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

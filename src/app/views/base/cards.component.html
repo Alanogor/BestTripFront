@@ -4,7 +4,7 @@
         <div class="card">
           <div class="card-header">
              Les experiences
-            <button class="btn btn-outline-success" (click)="creationExperience()">Ajouter une experience</button>
+            <button class="btn btn-outline-success" (click)="creationExperience()" [hidden]="!authenticated()">Ajouter une experience</button>
           </div>
           <div class="card-body">
             <table class="table">
@@ -24,12 +24,11 @@
                   <td>{{e.descriptionExperience}}</td>
                   <td>{{e.ratingExperience}}</td>
                   <td>{{e.prixExperience}}</td>
-                  <td>{{e.mediaExperience}}</td>
-                  <td><img src="data:image/jpeg;base64,{{e.mediasExperience}}" /></td>
+                  <td><img src="data:image/jpeg;base64,{{e.mediasExperience}}" height="120" width="120"/></td>
                   <td>
                     <button class="btn btn-outline-success" (click)="viewExperience(e)">Voir</button>
-                    <button class = "btn btn-outline-warning" (click)="editExperience(e)">Editer</button>
-                    <button class="btn btn-outline-danger" (click)="delete(e.idExperience)">Delete</button>
+                    <button class = "btn btn-outline-warning" (click)="editExperience(e)" [hidden]="!authorities()">Editer</button>
+                    <button class="btn btn-outline-danger" (click)="delete(e.idExperience)" [hidden]="!authorities()">Delete</button>
                   </td>
               </tr>
               </tbody>

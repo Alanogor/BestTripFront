@@ -28,7 +28,7 @@
         </tr>
     </table>
     <p ></p>
-    <form (ngSubmit)="save()">
+    <form (ngSubmit)="save()" [hidden]="!authenticated()">
         <tr>
             <td>Commentaire: </td>
             <td><textarea [(ngModel)]="commentaireExperience.commentaireComExperience" name="commentaireComExperience" rows="4"></textarea></td>

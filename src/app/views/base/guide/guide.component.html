@@ -1,14 +1,10 @@
-
-    <div class="row animated fadeIn">
-      <div class="col-lg-7">
-
     <div class="row  animated fadeIn">
       <div class="col-lg-6">
 
         <div class="card">
           <div class="card-header">
             Tous nos guides
-            <button class="btn btn-outline-success" (click)="ajouterGuide()">Ajouter un guide</button>
+            <button class="btn btn-outline-success" (click)="ajouterGuide()" [hidden]="!authenticated()">Ajouter un guide</button>
           </div>
           <div class="card-body">
             <table class="table">
@@ -33,17 +29,14 @@
                   
                   <td>
                     <button class="btn btn-outline-success" (click)="viewGuide(u)">Voir</button>
-                    <button class="btn btn-outline-warning" type="button" (click)="editGuide(u)">editGuide</button>
-                    <button class="btn btn-outline-danger" (click)="deleteGuide(u.idGuide)">Delete</button>
+                    <button class="btn btn-outline-warning" type="button" (click)="editGuide(u)" [hidden]="!authorities()">Editer</button>
+                    <button class="btn btn-outline-danger" (click)="deleteGuide(u.idGuide)" [hidden]="!authorities()">Delete</button>
                   </td>
               </tr>
               </tbody>
             </table>
           </div>
         </div>
-      </div>
-      </div>
-  
   <!--<div [hidden]="authenticated()">
     <p>Connectez-vous pour acceder a cette onglet</p>
   </div>-->

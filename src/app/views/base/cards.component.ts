@@ -1,6 +1,7 @@
 import { Expression } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from '../../app.service';
 import { Experience } from '../../models/experience';
 import { ExperienceService } from '../../services/experience.service';
 
@@ -10,7 +11,7 @@ import { ExperienceService } from '../../services/experience.service';
 export class CardsComponent {
   experiences!:Expression[];
   experience!:Experience;
-  constructor(private experienceService:ExperienceService,private router:Router) { }
+  constructor(private appServ:AppService,private experienceService:ExperienceService,private router:Router) { }
 
   ngOnInit(){
     this.findAll();
@@ -40,5 +41,17 @@ export class CardsComponent {
     this.experienceService.delete(id).subscribe(()=>
       this.findAll()
     );
+  }
+
+  public authenticated(){
+    return this.appServ.authenticated;
+  }
+
+  public authorities(){
+    if(this.appServ.isAdmin==true){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

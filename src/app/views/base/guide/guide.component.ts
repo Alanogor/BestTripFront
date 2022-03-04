@@ -14,7 +14,7 @@ export class GuideComponent implements OnInit {
   guides: any;  //utilisateurs: Utilisateur[] 
   guide: Guide = new Guide(); // Utilisateur utilisateur=new Utilisateur() : JAVA
   
-  constructor(private guideService:GuideService, private router:Router, private appService:AppService) { } 
+  constructor(private guideService:GuideService, private router:Router, private appServ:AppService) { } 
   ngOnInit(): void {
     this.findAll();
    
@@ -55,5 +55,17 @@ export class GuideComponent implements OnInit {
     localStorage.removeItem("idGuide");
     localStorage.setItem("idGuide",guide.idGuide.toString());
     this.router.navigate(['/base/editGuide',guide.idGuide]);
+  }
+
+  public authenticated(){
+    return this.appServ.authenticated;
+  }
+
+  public authorities(){
+    if(this.appServ.isAdmin==true){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

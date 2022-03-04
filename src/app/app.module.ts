@@ -49,24 +49,12 @@ import { AppService } from './app.service';
 import { UserService } from './services/user.service';
 
 
-import { GuideService } from './services/guide.service';
-import { ExperienceService } from './services/experience.service';
-import { CommentaireExperienceService } from './services/commentaire-experience.service';
-
-import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
-import { Guide } from './models/guide';
-import { Role } from './models/role';
-
-
-import { GuideService } from './services/guide.service';
-import { ExperienceService } from './services/experience.service';
-import { CommentaireExperienceService } from './services/commentaire-experience.service';
-import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
-import { Guide } from './models/guide';
-import { Role } from './models/role';
-
 import { RecommandationService } from './services/recommandation.service';
 import { CommentaireGuideService } from './services/commentaire-guide.service';
+import { GuideService } from './services/guide.service';
+import { ExperienceService } from './services/experience.service';
+import { CommentaireExperienceService } from './services/commentaire-experience.service';
+import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
 
 
 //Intercepte toute les requete pour les controler
@@ -120,7 +108,6 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     CommentaireGuideService,
     GuideService,
     ExperienceService,
-    GuideService,
     RoleService,
     RecommandationService,
     UserService,
