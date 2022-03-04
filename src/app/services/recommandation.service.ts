@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Recommandation } from '../models/recommandation';
@@ -20,9 +20,19 @@ export class RecommandationService {
     return this.httpClient.get(this.baseURL+"/"+id);
   }
 
-  public save(obj:Recommandation):Observable<any>{
-    return this.httpClient.post(this.baseURL,obj);
-  }
+  public save(file:File, recommandation:Recommandation):Observable<any>{
+		const formData = new FormData();
+		formData.append('titreR', recommandation.titreRecommandation);
+		formData.append('descriptionR', recommandation.descriptionRecommandation);
+		formData.append('typeR', recommandation.typeRecommandation);
+		formData.append('paysR', recommandation.paysRecommandation);
+    formData.append('prixR', recommandation.prixRecommandation.toString());
+		formData.append('ratingR', recommandation.ratingRecommandation.toString());
+    formData.append('fileU', file);
+		const req = new HttpRequest('POST', this.baseURL, formData,
+		{reportProgress:true, responseType:'text'});
+		return this.httpClient.request(req);
+	}
 
   public delete(id:number):Observable<any>{
     return this.httpClient.delete(this.baseURL+"/"+id);
