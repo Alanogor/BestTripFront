@@ -24,7 +24,7 @@ export const navItems: INavData[] = [
 
       ,
       {
-        name:"recommandation",
+        name:"Les recommandations",
         url:'/base/recommandation',
         icon: "cil-lightbulb ampoule"
       },
