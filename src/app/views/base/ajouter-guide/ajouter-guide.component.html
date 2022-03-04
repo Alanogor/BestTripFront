@@ -24,8 +24,10 @@
                   <label>Prix</label>
                   <input type="number" [(ngModel)]="guide.prixGuide" name="prixGuide" class="form-control">
                 </div>
-                
-                
+                <div class="form-group">
+                  <label>Image</label>
+                  <input type="file" (change)="selectFile($event)" name="file" class="form-control">
+                </div>               
                 <div class="card-footer">
                 <button class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Ajouter</button>
               </div>  

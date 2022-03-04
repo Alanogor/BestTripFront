@@ -9,6 +9,8 @@ import { GuideService } from '../../../services/guide.service';
   styleUrls: ['./ajouter-guide.component.scss']
 })
 export class AjouterGuideComponent implements OnInit {
+  selectedFiles?:FileList; //selection de plrs fichiers
+  currentFileUpload:File; //selctionner 1 fichier a partir dune liste de fichier au dessus
   guide=new Guide();
   guides:any;
   constructor(private router:Router,private guideService:GuideService) { }
@@ -16,9 +18,17 @@ export class AjouterGuideComponent implements OnInit {
   ngOnInit(): void {
   }
 
- save(){
-   this.guideService.save(this.guide).subscribe(() => {
-     this.router.navigate(['/base/guides']);
-   })
- }
+  selectFile(event:any){
+    this.selectedFiles = event.target.files; //donner valeur des fichiers selctinee a la variable files
+  }
+  
+  findAll(){
+    this.guideService.findAll().subscribe(data => {this.guide = data;}); 
+  }
+  save(){
+    this.currentFileUpload = this.selectedFiles?.item(0) as File; //valeur de l'image selectionee
+    this.guideService.save(this.currentFileUpload, this.guide).subscribe(
+      () => {this.router.navigate(['/base/guides']);} //vider formulaire et nput de type files et refresh
+    )
+  }
 }

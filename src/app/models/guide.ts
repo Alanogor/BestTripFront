@@ -4,4 +4,5 @@ export class Guide {
     paysGuide!:string;
     villeGuide!:string;
     prixGuide!:number;
+    file!:File;
 }
