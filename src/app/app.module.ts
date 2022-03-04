@@ -48,10 +48,19 @@ import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { UserService } from './services/user.service';
 
+
 import { GuideService } from './services/guide.service';
 import { ExperienceService } from './services/experience.service';
 import { CommentaireExperienceService } from './services/commentaire-experience.service';
 
+import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
+import { Guide } from './models/guide';
+import { Role } from './models/role';
+
+
+import { GuideService } from './services/guide.service';
+import { ExperienceService } from './services/experience.service';
+import { CommentaireExperienceService } from './services/commentaire-experience.service';
 import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
 import { Guide } from './models/guide';
 import { Role } from './models/role';
