@@ -65,6 +65,7 @@ import { EditExperienceComponent } from './edit-experience/edit-experience.compo
 
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -104,7 +105,7 @@ import { EditExperienceComponent } from './edit-experience/edit-experience.compo
     AjouterExperienceComponent,
     RecommandationviewComponent,
     EditrecommandationComponent,
-    EditExperienceComponent
+    EditExperienceComponent,
   ],providers:[
     ExperienceService
   ]

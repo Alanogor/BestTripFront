@@ -14,6 +14,7 @@ import { ExperienceService } from '../../../services/experience.service';
 export class ExperienceViewComponent implements OnInit {
   experience=new Experience();
   commentaireExperience=new CommentaireExperience();
+  commentaires!:any;
 
   constructor(private router:Router,private formBuilder:FormBuilder,private commentaireExperienceService:CommentaireExperienceService,private experienceService:ExperienceService) {
   }
@@ -28,6 +29,8 @@ export class ExperienceViewComponent implements OnInit {
     this.experienceService.findOne(+idExperience).subscribe(data=>{this.experience=data});
     console.log("experience="+this.experience);
     this.commentaireExperience.experience=this.experience;
+    console.log("experience:"+this.experience+", idExperience:"+idExperience+"commentaire.experience:"+this.commentaireExperience.experience);
+    this.commentaires=this.findAllCommmentaire(+idExperience);
   }
 
   public save(){
@@ -41,5 +44,9 @@ export class ExperienceViewComponent implements OnInit {
       localStorage.setItem("idExperience",this.experience.idExperience.toString());
       this.router.navigate(['/base/experienceview',this.experience.idExperience])
     });
+  }
+
+  findAllCommmentaire(id:number){
+    this.commentaireExperienceService.findByCommentaire(id).subscribe(data=>this.commentaires=data);
   }
 }

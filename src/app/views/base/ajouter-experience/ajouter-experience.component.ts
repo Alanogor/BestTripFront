@@ -10,15 +10,22 @@ import { ExperienceService } from '../../../services/experience.service';
 })
 export class AjouterExperienceComponent implements OnInit {
   experience=new Experience();
-
+  selectedFiles?:FileList;
+  currentFileUpdate?:File;
   constructor(private experienceService:ExperienceService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   public save(){
-    this.experienceService.save(this.experience).subscribe(()=>{
+    this.currentFileUpdate=this.selectedFiles?.item(0) as File;
+    console.log("ok="+this.currentFileUpdate);
+    this.experienceService.save(this.currentFileUpdate,this.experience).subscribe(()=>{
       this.router.navigate(["/base/experiences"]);
     })
+  }
+
+  selectFile(event:any){
+    this.selectedFiles=event.target.files;
   }
 }

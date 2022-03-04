@@ -47,7 +47,6 @@ import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { UserService } from './services/user.service';
-import { CommentaireGuideService } from './services/commentaire-guide.service';
 import { GuideService } from './services/guide.service';
 import { ExperienceService } from './services/experience.service';
 import { CommentaireExperienceService } from './services/commentaire-experience.service';
@@ -55,6 +54,7 @@ import { CommentaireRecommandationService } from './services/commentaire-recomma
 import { Guide } from './models/guide';
 import { Role } from './models/role';
 import { RecommandationService } from './services/recommandation.service';
+import { CommentaireGuideService } from './services/commentaire-guide.service';
 
 
 //Intercepte toute les requete pour les controler
@@ -113,7 +113,6 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     RecommandationService,
     UserService,
     CommentaireExperienceService,
-    CommentaireGuideService,
     CommentaireRecommandationService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true} //fais appelle a XhrInterceptor
   ],

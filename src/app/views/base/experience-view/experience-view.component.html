@@ -1,21 +1,44 @@
-<table>
-    <tr><th>{{experience.titreExperience}}</th></tr>
-    <tr><td>{{experience.descriptionExperience}}</td></tr>
-    <tr>
-        <td>{{experience.ratingExperience}}</td>
-        <td>{{experience.prixExperience}}</td>
-    </tr>
-</table>
-<form (ngSubmit)="save()">
-    <tr>
-        <td>Commentaire: </td>
-        <td><textarea [(ngModel)]="commentaireExperience.commentaireComExperience" name="commentaireComExperience" rows="4"></textarea></td>
-    </tr>
-    <tr>
-        <td>note:</td> 
-        <td><input type="number" [(ngModel)]="commentaireExperience.ratingComExperience" name="ratingComExperience"/></td>
-    </tr>
-    <tr>
-        <button class="btn btn-outline-success">Envoye</button>
-    </tr>
-</form>
+<div class="animated fadeIn">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" colspan="2">{{experience.titreExperience}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" colspan="2">{{experience.descriptionExperience}}</th>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="data:image/jpeg;base64,{{experience.mediasExperience}}"/></td>
+          </tr>
+          <tr>
+            <td>note: {{experience.ratingExperience}}</td>
+          </tr>
+          <tr>
+            <td>prix: {{experience.prixExperience}} €</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <h3>Commentaire:</h3>
+    <table class="table">
+        <tr *ngFor="let c of commentaires">
+            <td>{{c.commentaireComExperience}}</td>
+        </tr>
+    </table>
+    <p ></p>
+    <form (ngSubmit)="save()">
+        <tr>
+            <td>Commentaire: </td>
+            <td><textarea [(ngModel)]="commentaireExperience.commentaireComExperience" name="commentaireComExperience" rows="4"></textarea></td>
+        </tr>
+        <tr>
+            <td>note:</td> 
+            <td><input type="number" [(ngModel)]="commentaireExperience.ratingComExperience" name="ratingComExperience"/></td>
+        </tr>
+        <tr>
+            <button class="btn btn-outline-success">Envoye</button>
+        </tr>
+    </form>
+</div>
