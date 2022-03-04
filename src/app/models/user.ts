@@ -1,12 +1,12 @@
 import { Role } from "./role";
 
 export class User {
-    idUser!:number;
+    idUtilisateur!:number;
     nom!:string;
     prenom!:string
     username!:string;
     password!:string;
     email!:string;
-    newletter!:boolean;
+    newsLetter!:boolean;
     roles!:Role[];
 }

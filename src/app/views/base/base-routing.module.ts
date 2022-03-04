@@ -33,6 +33,7 @@ import { EditExperienceComponent } from './edit-experience/edit-experience.compo
 
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -45,6 +46,13 @@ const routes: Routes = [
         redirectTo: 'users'
       },
       {
+        path: 'home',
+        component: CarouselsComponent,
+        data: {
+          title: 'Accueil'
+        }
+      },
+      { 
         path: 'users',
         component: FormsComponent,
         data: {
@@ -55,7 +63,7 @@ const routes: Routes = [
         path:"roles",
         component:CollapsesComponent,
         data:{
-          title:'Les roles'
+          title:'Les rôles'
         }
       },
       {

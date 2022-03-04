@@ -20,9 +20,9 @@ export class DefaultLayoutComponent {
 
   logout(){
     this.httpClient.post("http://localhost:8080/logout","").subscribe(()=>{
-      //this.appServ.authenticated=false;
-      //this.appServ.isAdmin=false;
-      //this.appServ.isUser=false;
+      this.appServ.authenticated=false;
+      this.appServ.isAdmin=false;
+      this.appServ.isUser=false;
       this.router.navigateByUrl("/login")
     })
   }

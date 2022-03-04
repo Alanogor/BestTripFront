@@ -1,8 +1,8 @@
-<div class="animated fadeIn">
-  <div > <!--[hidden]="!authenticated()"-->
+<div class="animated fadeIn" >
+  <div [hidden]="!authenticated()">
     <div class="row">
       <div class="col-md-6">
-        <div class="card">
+        <!--<div class="card">
           <div class="card-header">
             <strong>Ajouter un utilisateur</strong>
           </div>
@@ -41,36 +41,45 @@
             
             </form>
           </div>
-        </div>
+        </div>-->
       </div>
     </div><!--/.row-->
-    <div class="row"  [hidden]="authorities()">
-      <div class="col-lg-7">
+    <div class="row"  [hidden]="!authorities()">
+      <div class="col-lg-">
         <div class="card">
           <div class="card-header">
-            <i class="fa fa-align-justify"></i> Les utilisateurs
+             Les utilisateurs
           </div>
           <div class="card-body">
             <table class="table">
               <thead>
                 <tr>
+                  <th>ID</th>
                   <th>Nom</th>
                   <th>Prénom</th>
+                  <th>Email</th>
                   <th>Username</th>
-                  <th>Password</th>
+                  <th>NewsLetter</th>
+                  <th>Rôles</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let u of utilisateurs">
+                  <td>{{u.idUtilisateur}}</td>
                   <td>{{u.nom}}</td>
                   <td>{{u.prenom}}</td>
+                  <td>{{u.email}}</td>
                   <td>{{u.username}}</td>
-                  <td>{{u.password}}</td>
+                  <td>{{u.newsLetter}}</td>
+                  <td *ngFor="let r of u.roles">
+                    <tr>
+                      <td>{{r.libelle}}</td>
+                    </tr>
+                  </td>
                   <td>
-                    <button class="btn btn-outline-success" (click)="update(u.idUser)">update</button>
-                    <button class="btn btn-outline-warning" type="button" (click)="editUser(u)">editUser</button>
-                    <button class="btn btn-outline-danger" (click)="deleteUtilisateur(u.idUser)">Delete</button>
+                    <button class="btn btn-outline-warning" (click)="editUser(u)">Edit</button>
+                    <button class="btn btn-outline-danger" (click)="deleteUser(u.idUtilisateur)">Delete</button>
                   </td>
               </tr>
               </tbody>

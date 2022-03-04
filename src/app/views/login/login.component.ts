@@ -8,10 +8,14 @@ import { AppService } from '../../app.service';
   templateUrl: 'login.component.html'
 })
 export class LoginComponent {
-  credentials={username:'',password:''};
-  constructor(private appServ:AppService, private httpClient:HttpClient, private router:Router){}
+  credentials = {username:'',password:''};
+  constructor(private appService:AppService, private httpClient:HttpClient, private router:Router){}
   login(){
-    //this.appServ.authenticate(this.credentials,()=>{this.router.navigateByUrl("/base/users")});
+    this.appService.authenticate(this.credentials,()=>{this.router.navigateByUrl("/base/home")});
     return false;
   }
+  register(){
+    return this.router.navigateByUrl("/register");
+  }
+
 }

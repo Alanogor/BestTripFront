@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  /*authenticated=false;
+  authenticated=false;
   responseAll: any;
   isAdmin=false;
   isUser=false;
@@ -16,7 +16,7 @@ export class AppService {
           authorization : 'Basic ' + btoa(credentials.username+ ':'+credentials.password)
         } : {}
     );
-  this.httpClient.get('http://localhost:8080/login/user',{headers:headers}).subscribe(response =>{
+  this.httpClient.get('http://localhost:8080/login/base',{headers:headers}).subscribe(response =>{
   console.log("response="+response);  
   this.responseAll = response;
   if(this.responseAll['username']){
@@ -34,5 +34,6 @@ export class AppService {
   }
   return callback && callback();
   })  
-  };*/
+  };
+
 }

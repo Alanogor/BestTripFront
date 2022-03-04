@@ -1,11 +1,12 @@
 <app-header
   [navbarBrandRouterLink]="['/dashboard']"
   [fixed]="true"
-  [navbarBrandFull]="{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}"
-  [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}"
+  [navbarBrandFull]="{src: 'https://us.123rf.com/450wm/jovanas/jovanas1602/jovanas160201149/52031915-logo-avion-volant-autour-de-la-plan%C3%A8te-terre-bleue.jpg?ver=6', width: 59, height: 50, alt: 'CoreUI Logo'}"
+  [navbarBrandMinimized]="{src: 'https://us.123rf.com/450wm/jovanas/jovanas1602/jovanas160201149/52031915-logo-avion-volant-autour-de-la-plan%C3%A8te-terre-bleue.jpg?ver=6', width: 30, height: 30, alt: 'CoreUI Logo'}"
   [sidebarToggler]="'lg'"
-  [asideMenuToggler]="'lg'">
-  <ul class="nav navbar-nav d-md-down-none">
+  [asideMenuToggler]="'lg'" 
+  style="background-color:darkslategrey; color:white;">
+  <!--<ul class="nav navbar-nav d-md-down-none">
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Dashboard</a>
     </li>
@@ -15,7 +16,7 @@
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Settings</a>
     </li>
-  </ul>
+  </ul>-->
   <ul class="nav navbar-nav ml-auto">
     <li class="nav-item d-md-down-none">
       <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
@@ -59,13 +60,13 @@
     <!-- breaking change 'cui-breadcrumb' -->
     <cui-breadcrumb>
       <!-- Breadcrumb Menu-->
-      <li class="breadcrumb-menu d-md-down-none">
+      <!--<li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
           <a class="btn" href="#"><i class="icon-speech"></i></a>
           <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
           <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
         </div>
-      </li>
+      </li>-->
     </cui-breadcrumb>
     <!-- deprecation warning for 'app-breadcrumb' -->
     <!--<ol class="breadcrumb">-->
@@ -335,7 +336,8 @@
     </tabset>
   </app-aside>
 </div>
-<app-footer>
-  <span><a href="https://coreui.io">CoreUI</a> &copy; 2021 creativeLabs.</span>
-  <span class="ml-auto">Powered by <a href="https://coreui.io/angular">CoreUI for Angular</a></span>
+<app-footer 
+style="background-color:darkslategrey ">
+  <span style="color:white"> &copy; 2021 BestTrip.</span>
+  <!--<span class="ml-auto">Powered by <a href="https://coreui.io/angular">CoreUI for Angular</a></span>-->
 </app-footer>

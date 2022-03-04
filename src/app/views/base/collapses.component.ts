@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../../app.service';
 import { Role } from '../../models/role';
 import { RoleService } from '../../services/role.service';
 
@@ -8,7 +9,7 @@ import { RoleService } from '../../services/role.service';
 export class CollapsesComponent {
   roles:any[];
   role=new Role();
-  constructor(private roleService:RoleService) { }
+  constructor(private appServ:AppService,private roleService:RoleService) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -27,5 +28,13 @@ export class CollapsesComponent {
 
   public delete(id:number){
     this.roleService.delete(id).subscribe(()=>this.findAll());
+  }
+
+  public authoritiesA(){
+    if(this.appServ.isAdmin==true){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
