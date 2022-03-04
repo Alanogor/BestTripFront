@@ -48,6 +48,27 @@ import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { UserService } from './services/user.service';
 
+
+import { GuideService } from './services/guide.service';
+import { ExperienceService } from './services/experience.service';
+import { CommentaireExperienceService } from './services/commentaire-experience.service';
+
+import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
+import { Guide } from './models/guide';
+import { Role } from './models/role';
+
+
+import { GuideService } from './services/guide.service';
+import { ExperienceService } from './services/experience.service';
+import { CommentaireExperienceService } from './services/commentaire-experience.service';
+import { CommentaireRecommandationService } from './services/commentaire-recommandation.service';
+import { Guide } from './models/guide';
+import { Role } from './models/role';
+
+import { RecommandationService } from './services/recommandation.service';
+import { CommentaireGuideService } from './services/commentaire-guide.service';
+
+
 //Intercepte toute les requete pour les controler
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -96,6 +117,15 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     UserService,
     RoleService,
     AppService,
+    CommentaireGuideService,
+    GuideService,
+    ExperienceService,
+    GuideService,
+    RoleService,
+    RecommandationService,
+    UserService,
+    CommentaireExperienceService,
+    CommentaireRecommandationService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true} //fais appelle a XhrInterceptor
   ],
   bootstrap: [ AppComponent ]

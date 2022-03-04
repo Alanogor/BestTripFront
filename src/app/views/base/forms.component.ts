@@ -38,8 +38,10 @@ export class FormsComponent implements OnInit{
     this.utilisateur.newsLetter = true;
     this.utilisateurService.save(this.utilisateur).subscribe(()=>{
         this.findAll();  // MAJ de la liste des utilisateurs
-        this.utilisateur = new User(); // Vider le formulaire
-        //this.roles.libelle = libelle.user;
+        this.utilisateur = new User(); // Vider le formulaire    
+    })
+  }
+
 
     })
   }

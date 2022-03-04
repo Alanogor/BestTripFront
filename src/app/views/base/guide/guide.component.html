@@ -1,0 +1,50 @@
+
+    <div class="row animated fadeIn">
+      <div class="col-lg-7">
+
+    <div class="row  animated fadeIn">
+      <div class="col-lg-6">
+
+        <div class="card">
+          <div class="card-header">
+            Tous nos guides
+            <button class="btn btn-outline-success" (click)="ajouterGuide()">Ajouter un guide</button>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Pays</th>
+                  <th>Ville</th>
+                  <th>Prix</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let u of guides">
+                  <td>{{u.descriptionGuide}}</td>
+                  <td>{{u.paysGuide}}</td>
+                  <td>{{u.villeGuide}}</td>
+                  <td>{{u.prixGuide}}</td>
+                  <td><img src="data:image/jpeg;base64,{{u.mediasGuide}}" height="120" width="120"/></td>
+                  
+                  
+                  <td>
+                    <button class="btn btn-outline-success" (click)="viewGuide(u)">Voir</button>
+                    <button class="btn btn-outline-warning" type="button" (click)="editGuide(u)">editGuide</button>
+                    <button class="btn btn-outline-danger" (click)="deleteGuide(u.idGuide)">Delete</button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+  
+  <!--<div [hidden]="authenticated()">
+    <p>Connectez-vous pour acceder a cette onglet</p>
+  </div>-->
+

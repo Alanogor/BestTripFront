@@ -48,6 +48,23 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { EdituserComponent } from './edituser/edituser.component';
+import { GuideComponent } from './guide/guide.component';
+import { EditGuideComponent } from './edit-guide/edit-guide.component';
+import { ViewGuideComponent } from './view-guide/view-guide.component';
+import { AjouterGuideComponent } from './ajouter-guide/ajouter-guide.component';
+
+import { RecommandationComponent } from './recommandation/recommandation.component';
+import { AjouterRecommandationComponent } from './ajouter-recommandation/ajouter-recommandation.component';
+import { ExperienceService } from '../../services/experience.service';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
+import { AjouterExperienceComponent } from './ajouter-experience/ajouter-experience.component';
+
+import { RecommandationviewComponent } from './recommandationview/recommandationview.component';
+import { EditrecommandationComponent } from './editrecommandation/editrecommandation.component';
+import { EditExperienceComponent } from './edit-experience/edit-experience.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -77,7 +94,20 @@ import { EdituserComponent } from './edituser/edituser.component';
     ProgressComponent,
     TooltipsComponent,
     NavbarsComponent,
-    EdituserComponent
+    EdituserComponent,
+    GuideComponent,
+    EditGuideComponent,
+    ViewGuideComponent,
+    AjouterGuideComponent,
+    RecommandationComponent,
+    AjouterRecommandationComponent,
+    ExperienceViewComponent,
+    AjouterExperienceComponent,
+    RecommandationviewComponent,
+    EditrecommandationComponent,
+    EditExperienceComponent,
+  ],providers:[
+    ExperienceService
   ]
 })
 export class BaseModule { }

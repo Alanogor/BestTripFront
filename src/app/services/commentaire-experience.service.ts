@@ -29,4 +29,8 @@ export class CommentaireExperienceService {
   public save(obj:any):Observable<any>{
     return this.httpClient.post(this.baseURL,obj)
   }
+
+  public findByCommentaire(id:number):Observable<any>{
+    return this.httpClient.get(this.baseURL+"_commentaire/"+id);
+  }
 }

@@ -1,0 +1,39 @@
+<div class="animated fadeIn">
+    <div > <!--[hidden]="!authenticated()"-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <strong>Ajouter un guide</strong>
+            </div>
+            <div class="card-body">
+              <form class="form-horizontal" (ngSubmit)="save()">
+                <div class="form-group">
+                  <label>Description</label>
+                  <input type="text" [(ngModel)]="guide.descriptionGuide" name="descriptionGuide" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Pays</label>
+                  <input type="text" [(ngModel)]="guide.paysGuide" name="paysGuide" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Ville</label>
+                  <input type="text" [(ngModel)]="guide.villeGuide" name="villeGuide" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Prix</label>
+                  <input type="number" [(ngModel)]="guide.prixGuide" name="prixGuide" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Image</label>
+                  <input type="file" (change)="selectFile($event)" name="file" class="form-control">
+                </div>               
+                <div class="card-footer">
+                <button class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Ajouter</button>
+              </div>  
+              
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -20,8 +20,24 @@ export const navItems: INavData[] = [
         name:"Les roles",
         url:'/base/roles',
         icon: "cil-sitemap"
+      },
+      {
+        name:"Les guides",
+        url:'/base/guides',
+      },
+      {
+        name:"Les experience",
+        url:"/base/experiences"
+      }
+
+      ,
+      {
+        name:"recommandation",
+        url:'/base/recommandation',
+        icon: "cil-sitemap"
       }
       
+
     ]
   }
 ];

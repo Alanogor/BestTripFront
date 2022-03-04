@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+            <table>
+                <div class="card-header">
+                    <tr><th>{{recommandation.titreRecommandation}}</th></tr>
+                </div>
+                <tr><td>{{recommandation.descriptionRecommandation}}</td></tr>
+            <tr>
+                <td>{{recommandation.ratingRecommandation}}</td>
+                <td>{{recommandation.prixRecommandation}}</td>
+            </tr>
+            </table>
+        </div>
+        <div class="card">
+            <form (ngSubmit)="save()">
+                <tr>
+                    <td>Commentaire: </td>
+                    <td><textarea [(ngModel)]="commentaireRecommandation.commentaireComRecommandation" name="commentaireComRecommandation" rows="4"></textarea></td>
+                </tr>
+                <tr>
+                    <td>note:</td> 
+                    <td><input type="number" [(ngModel)]="commentaireRecommandation.ratingComRecommandation" name="ratingComRecommandation"/></td>
+                </tr>
+                <tr>
+                    <button class="btn btn-outline-success">Envoye</button>
+                </tr>
+            </form>
+        </div> 
+        </div>
+    </div>
+</div>
