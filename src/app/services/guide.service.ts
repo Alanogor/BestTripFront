@@ -20,21 +20,21 @@ export class GuideService {
     return this.httpClient.get(this.baseURL+"/"+id);
   }
 
-  public save(obj:Guide):Observable<any>{
+  /*public save(obj:Guide):Observable<any>{
     return this.httpClient.post(this.baseURL,obj);
-  }
+  }*/
 
-  /*public save(file:File, guide:Guide):Observable<any>{
+  public save(file:File,guide:Guide):Observable<any>{
 		const formData = new FormData();
-		formData.append('nomU', guide.description);
-		formData.append('prenomU', guide.prenomUtilisateur);
-		formData.append('usernameU', guide.username);
-		formData.append('passwordU', guide.password);
+		formData.append('descriptionG', guide.descriptionGuide);
+		formData.append('paysG', guide.paysGuide);
+		formData.append('villeG', guide.villeGuide);
+		formData.append('prix', guide.prixGuide.toString());
 		formData.append('fileU', file);
 		const req = new HttpRequest('POST', this.baseURL, formData,
 		{reportProgress:true, responseType:'text'});
 		return this.httpClient.request(req);
-	}*/
+	}
 
   public delete(id:number):Observable<any>{
     return this.httpClient.delete(this.baseURL+"/"+id);

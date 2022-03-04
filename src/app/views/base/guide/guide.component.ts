@@ -13,8 +13,7 @@ export class GuideComponent implements OnInit {
 
   guides: any;  //utilisateurs: Utilisateur[] 
   guide: Guide = new Guide(); // Utilisateur utilisateur=new Utilisateur() : JAVA
-  selectedFiles?:FileList; //selection de plrs fichiers
-  currentFileUpload:File; //selctionner 1 fichier a partir dune liste de fichier au dessus
+  
   constructor(private guideService:GuideService, private router:Router, private appService:AppService) { } 
   ngOnInit(): void {
     this.findAll();
@@ -28,25 +27,14 @@ export class GuideComponent implements OnInit {
   deleteGuide(id:number){
     this.guideService.delete(id).subscribe(()=>{this.findAll()})  
   }
-  save(){
+  /*save(){
     this.guideService.save(this.guide).subscribe(()=>{
         this.findAll();  
         this.guide = new Guide(); 
     })
    
-  }
-
-  selectFile(event:any){
-    this.selectedFiles = event.target.files; //donner valeur des fichiers selctinee a la variable files
-  }
-
-  /*save(){
-    this.currentFileUpload = this.selectedFiles?.item(0) as File; //valeur de l'image selectionee
-    this.guideService.save(this.currentFileUpload,this.guide).subscribe(
-      () => {this.findAll(); this.guide = new Guide(); this.selectedFiles = undefined;} //vider formulaire et nput de type files et refresh
-    )
   }*/
- 
+
   public viewGuide(guide:Guide){
     //navigation entre forms.Component.ts et editUser.Component.ts
     //1) Creer une variable local
